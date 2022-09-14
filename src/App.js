@@ -1,25 +1,81 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBar from "./components/navBar.jsx";
+import List from "./components/list";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Movies from "./components/movies.jsx";
 
 function App() {
+  const [listNum, setListNum] = useState(0);
+  const [listMovies, setListMovies] = useState([]);
+  const [movies] = useState([
+    {
+      id: 1,
+      title: "Mi nismo andjeli",
+      description:
+        "Chocolate is a food made from cacao beans. It is used in many desserts like pudding, cakes and candy",
+        
+      amount: 0,
+    },
+    {
+      id: 2,
+      title: "Mi nismo andjeli 2",
+      description:
+        "Lollipops are available in a number of colors and flavors, particularly fruit flavors.",
+      amount: 0,
+    },
+    {
+      id: 3,
+      title: "Mi nismo andjeli 3",
+      description:
+        "Ice cream is a sweetened frozen food typically eaten as a snack or dessert.",
+      amount: 0,
+    },
+  ]);
+  function refreshList() {
+    let newMovies = movies.filter((movie) => movie.amount > 0);
+    setListMovies(newMovies);
+  }
+  function addMovies(title, id) {
+    console.log("Dodat je film: " + title);
+    setListNum(listNum + 1);
+    
+    movies.forEach((movie) => {
+      if (movie.id === id) {
+        movie.amount++;
+      }
+      console.log(movie.amount);
+    });
+    refreshList();
+  }
+    function deleteMovies(title, id) {
+      console.log("Obrisan je film: " + title);
+      setListNum(listNum - 1);
+      
+      movies.forEach((movie) => {
+        if (movie.id === id && movie.amount>0) {
+           movie.amount--;
+        }
+        console.log(movie.amount);
+      });
+      refreshList();
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter className="App">
+      <NavBar listNum={listNum}></NavBar>
+      <Routes>
+        <Route
+          path="/"
+          element={<Movies  movies={movies} onAdd={addMovies} onDelete={deleteMovies}/>}
+          />
+          
+        <Route path="/list" element={<List movies={listMovies} />} />
+     </Routes>
+    </BrowserRouter>
   );
-}
 
-export default App;
+}
+ export default App;
+
+

@@ -4,6 +4,9 @@ import List from "./components/list";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Movies from "./components/movies.jsx";
+import slika1 from "./slike/Mi_nismo_anđeli1.jpg";
+import slika2 from "./slike/Minismoandjeli2.jpg";
+import slika3 from "./slike/Mi_nismo_andjeli_3.jpg";
 
 function App() {
   const [listNum, setListNum] = useState(0);
@@ -11,6 +14,7 @@ function App() {
   const [movies] = useState([
     {
       id: 1,
+      image: slika1,
       title: "Mi nismo andjeli",
       description:
         "Chocolate is a food made from cacao beans. It is used in many desserts like pudding, cakes and candy",
@@ -19,6 +23,7 @@ function App() {
     },
     {
       id: 2,
+      image: slika2,
       title: "Mi nismo andjeli 2",
       description:
         "Lollipops are available in a number of colors and flavors, particularly fruit flavors.",
@@ -26,6 +31,7 @@ function App() {
     },
     {
       id: 3,
+      image: slika3,
       title: "Mi nismo andjeli 3",
       description:
         "Ice cream is a sweetened frozen food typically eaten as a snack or dessert.",

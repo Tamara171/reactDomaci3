@@ -17,7 +17,7 @@ function App() {
       image: slika1,
       title: "Mi nismo andjeli",
       description:
-        "Chocolate is a food made from cacao beans. It is used in many desserts like pudding, cakes and candy",
+        "Mi nismo anđeli srbijanska/jugoslavenska je filmska komedija iz 1992. godine koju je režirao i napisao Srđan Dragojević. Glavne uloge tumače Nikola Kojo, Milena Pavlović, Uroš Đurić, Srđan Todorović, Zoran Cvijanović i Branka Katić. ",
         
       amount: 0,
     },
@@ -26,7 +26,7 @@ function App() {
       image: slika2,
       title: "Mi nismo andjeli 2",
       description:
-        "Lollipops are available in a number of colors and flavors, particularly fruit flavors.",
+        "Nastavak legendarnog filma o Nikoli, beogradskom zavodniku. U drugom delu, Nikola je otac tinejdžerke koji mora da se izbori s brojnim udvaračima svoje ćerke.",
       amount: 0,
     },
     {
@@ -34,7 +34,7 @@ function App() {
       image: slika3,
       title: "Mi nismo andjeli 3",
       description:
-        "Ice cream is a sweetened frozen food typically eaten as a snack or dessert.",
+        "Rokenrol uzvraća udarac, poznat i kao Mi nismo anđeli 3 je treći nastavak filma Mi nismo anđeli. Međutim, ovaj nastavak odstupa od prethodna dva, jer se zasniva na priči Srđana Dragojevića „Dan kad je crk‘o Maršal“, i glumi značajno izmenjena glumačka postava u odnosu na prethodna dva filma.",
       amount: 0,
     },
   ]);

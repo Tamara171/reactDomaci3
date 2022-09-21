@@ -6,7 +6,7 @@ const list = ({ movies }) => {
     <div className="card-container">
       <h3>Lista filmova koje ste dodali u OMILJENE</h3>
       {movies.map((movie) => (
-        <OneMovie movie={movie} key={movie.id}  />
+        <OneMovie movies={movie} key={movie.id}  inList={0} />
       ))} 
     </div>
   );

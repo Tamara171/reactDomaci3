@@ -36,7 +36,7 @@ function OneMovie({movies, onAdd, onDelete, inList}) {
         
       </>
     ) : (
-      <h4>Amount: {movies.amount}</h4>
+      <h4>Dodat u listu: {movies.amount}</h4>
     )}
    </div>
      ); 
